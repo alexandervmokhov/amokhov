@@ -1,7 +1,7 @@
 package ru.job4j;
 
 /**
- * Class Calculate для выполнения задания 1.1. Создание Hello World [#141].
+ * Class Calculate для выполнения задания "1.1. Создание Hello World [#141]".
  *
  * @author Alexander Mokhov (alexander.v.mokhov@gmail.com)
  * @version 1
