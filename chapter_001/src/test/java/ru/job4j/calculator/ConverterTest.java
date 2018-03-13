@@ -8,14 +8,14 @@ public class ConverterTest {
     @Test
     public void when60RubleToDollarThen1() {
         Converter converter = new Converter();
-        int result = converter.rubleToDollar(60);
+        int result = converter.RubleToDollar(60);
         assertThat(result, is(1D));
     }
 
     @Test
     public void when70RubleToEuroThen1() {
         Converter converter = new Converter();
-        int result = converter.rubleToDollar(70);
+        int result = converter.RubleToDollar(70);
         assertThat(result, is(1D));
     }
 }
