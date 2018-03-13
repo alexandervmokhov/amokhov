@@ -27,3 +27,8 @@ package ru.job4j.max;
 	 return max
  }
  
+ // Метод для вычисления максимума из трех чисел
+ public static int max(int first, int second, int third) {
+    return max(max(first, second), third);
+}
+ 
