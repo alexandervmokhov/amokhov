@@ -18,16 +18,27 @@ public class MaxTest {
 	}
 	
 	@Test
-	public void whenFirstLessSecond() {
+	public void whenSecondLessFirst() {
     Max maxim = new Max();
     int result = maxim.max(2, 1);
     assertThat(result, is(2));
 	}
 	
 	@Test
-	public void whenFirstLessSecond() {
+	public void whenFirstEqualSecond() {
     Max maxim = new Max();
     int result = maxim.max(2, 2);
     assertThat(result, is(2));
 	}
+
+	// Тесты для задания "Максимум из трех чисел".
+	@Test
+    public void whenFirstLessSecondLessThird() {
+        Max maxim = new Max();
+        int result;
+        result = maxim.max(1, 2);
+        result = maxim.max(1, 3);
+        result = maxim.max (2, 3);
+        assertThat(result, is(3));
+    }
 }

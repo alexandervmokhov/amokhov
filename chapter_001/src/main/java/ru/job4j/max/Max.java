@@ -3,32 +3,20 @@ package ru.job4j.max;
 /**
  *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
  *@version $Id$
- *@since 13.03.2018
+ *@since 15.03.2018
   */
-  
- // С использованием if else
- public class Max {
-	 public int max(int first, int second);
-	 if (first > second) {
-            return first;              
-        } else if (first < second) { 
-            return second;
-        } else if (first = second) {
-			return first; 
-		}        
- }
- 
- // С использованием тернарного оператора
- public class Max {
-	 public int max(int first, int second);
-	 max = first > second ? first : second;
-	 return max
-	 max = first < second ? seconf : first;
-	 return max
- }
- 
- // Метод для вычисления максимума из трех чисел
- public static int max(int first, int second, int third) {
-    return max(max(first, second), third);
+
+// Метод для вычисления максимума из двух чисел
+public class Max {
+    public int max(int first, int second) {
+        return first > second ? first : second;
+    }
+
+    // Метод для вычисления максимума из трех чисел
+    public int max(int first, int second, int third) {
+        int temp = this.max(first, second);
+        temp = this.max(first, third);
+        temp = this.max(second, third);
+        return temp;
+    }
 }
- 
