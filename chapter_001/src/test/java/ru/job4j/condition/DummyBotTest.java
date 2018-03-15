@@ -19,18 +19,20 @@ public class DummyBotTest {
 		);
 	}
 	
-	@Testpublic void whenByuBot() {
+	@Test
+	public void whenByuBot() {
 		DummyBot bot = new DummyBot();
 		assertThat(
-				bot.answer("Пока".),
+				bot.answer("Пока."),
 				is("До скорой встречи.")
+
 		);
 	}
 	
 	@Test
 	public void whenUnknownBot() {
 		DummyBot bot = new DummyBot();
-		assert that(
+		assertThat(
 				bot.answer("Сколько будет 2 + 2?"),
 				is("Это ставит меня в тупик. Спросите другой вопрос.")
 		);
