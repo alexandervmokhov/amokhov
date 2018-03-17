@@ -20,6 +20,7 @@ public class Factorial {
                 result *= i;
                 // Факториал для числа 0 равен 1
                 if (n == 0 || n == 1) {
+                    return result;
                 }
             }
         }

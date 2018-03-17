@@ -39,7 +39,7 @@ public class Paint {
         int weight = height;
         for (int row = 0; row != height; row++) {
             for (int column = 0; column != weight; column++) {
-                if (row >= weight - column -1) {
+                if (row >= weight - column - 1) {
                     screen.append("^");
                 } else {
                     screen.append(" ");

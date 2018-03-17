@@ -15,7 +15,7 @@ public class FactorialTest {
     public void whenCalculateFactorialForFiveThenOneHundredTwenty() {
         //Тест, проверяющий, что факториал числа 5 равен 120.
         Factorial factor = new Factorial();
-        factor.calc( 5);
+        factor.calc(5);
         int result = factor.calc(5);
         assertThat(result, is(120));
     }
