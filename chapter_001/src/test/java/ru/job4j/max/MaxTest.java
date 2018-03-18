@@ -38,7 +38,7 @@ public class MaxTest {
         int result;
         result = maxim.max(1, 2);
         result = maxim.max(1, 3);
-        result = maxim.max (2, 3);
+        result = maxim.max(2, 3);
         assertThat(result, is(3));
     }
 }
