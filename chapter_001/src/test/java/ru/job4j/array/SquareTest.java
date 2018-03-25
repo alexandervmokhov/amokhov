@@ -16,9 +16,9 @@ public class SquareTest {
     public void whenBound3Then149() {
         int bound = 3;
         Square square = new Square();
-        int[] array = square.calculate(bound);
+        int[] rst = square.calculate(bound);
         int[] expect = new int[] {1, 4, 9};
-        assertThat(array, is (expect));
+        assertThat(rst, is (expect));
     }
 
     @Test
