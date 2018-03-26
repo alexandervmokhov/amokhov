@@ -13,10 +13,19 @@ import static org.junit.Assert.*;
 
 public class FindLoopTest {
     @Test
-    public void findIndexOfData() {
+    public void findIndexOf3Is3() {
         int[] data = new int[] {0, 1, 2, 3, 4, 5, 6};
         FindLoop findLoop = new FindLoop();
         int rsl = findLoop.indexOf(data, 3);
+        int expect = 3;
+        assertThat(rsl, is(expect));
+    }
+
+    @Test
+    public void findIndexOf6is6() {
+        int[] data = new int[] {0, 1, 2, 3, 4, 5, 6};
+        FindLoop findLoop = new FindLoop();
+        int rsl = findLoop.indexOf(data, 6);
         int expect = 3;
         assertThat(rsl, is(expect));
     }
