@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
  */
 public class MatrixTest {
     @Test
-    public void WhenSize3ThenMultipleTableArray3x3() {
+    public void whenSize3ThenMultipleTableArray3x3() {
         int size = 3;
         Matrix matrix = new Matrix();
         int[][] multipleTab = matrix.multiple(size);
@@ -20,7 +20,7 @@ public class MatrixTest {
     }
 
     @Test
-    public void WhenSize6ThenMultipleTableArray6x6 () {
+    public void whenSize6ThenMultipleTableArray6x6() {
         int size = 6;
         Matrix matrix = new Matrix();
         int[][] multipleTab = matrix.multiple(size);
