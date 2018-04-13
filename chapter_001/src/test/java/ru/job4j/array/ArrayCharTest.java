@@ -4,6 +4,11 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+/**
+ * @author Alexander Mokhov (alexander.v.mokhov@gmail.com
+ * @version $Id$
+ * since 30.03.2018
+ */
 public class ArrayCharTest {
     @Test
     public void whenStartWithPrefixThenTrue() {

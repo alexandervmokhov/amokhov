@@ -10,7 +10,6 @@ import static org.junit.Assert.*;
  * @version $Id$
  * since 17.03.2018
  */
-
 public class SquareTest {
     @Test
     public void whenBound3Then149() {

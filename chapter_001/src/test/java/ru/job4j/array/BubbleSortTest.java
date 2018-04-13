@@ -9,7 +9,6 @@ import static org.junit.Assert.assertThat;
  * @version $Id$
  * since 26.03.2018
  */
-
 public class BubbleSortTest {
     @Test
     public void whenSortArrayWithTenElementsThenSortedArray() {

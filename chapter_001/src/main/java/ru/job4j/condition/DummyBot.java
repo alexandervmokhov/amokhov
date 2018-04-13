@@ -1,11 +1,14 @@
 package ru.job4j.condition;
 
 /**
+ * Class DummyBot для выполнения задания "3.1. Глупый бот. [#31323]".
+ *
  *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
  *@version $Id$
  *@since 13.03.2018
  */
 public class DummyBot {
+
 	/**
 	 * Отвечает на вопросы.
 	 *@param question Вопрос от клиента.

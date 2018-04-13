@@ -1,7 +1,11 @@
 package ru.job4j.calculator;
 
 /**
- * Корвертор валюты.
+ * Class Converter для выполнения задания "3.2. Конвертер валюты. [#41583]".
+ *
+ * @author Alexander Mokhov (alexander.v.mokhov@gmail.com)
+ * @version $Id$
+ * @since 13.03.2018
  */
 public class Converter {
 

@@ -31,14 +31,14 @@ public class MaxTest {
     assertThat(result, is(2));
 	}
 
-	// Тесты для задания "Максимум из трех чисел".
+    /**
+     * Тест для задания "Максимум из трех чисел".
+     */
 	@Test
-    public void whenFirstLessSecondLessThird() {
+    public void whenFirstLessSecondMoreThird() {
         Max maxim = new Max();
         int result;
-        result = maxim.max(1, 2);
-        result = maxim.max(1, 3);
-        result = maxim.max(2, 3);
-        assertThat(result, is(3));
+        result = maxim.max(7, 25, 18);
+        assertThat(result, is(25));
     }
 }

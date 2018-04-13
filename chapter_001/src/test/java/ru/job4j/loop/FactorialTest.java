@@ -11,18 +11,23 @@ import static org.junit.Assert.assertThat;
  * @since 16.03.2018
  */
 public class FactorialTest {
+
+    /**
+     * Тест, проверяющий, что факториал числа 5 равен 120.
+     */
     @Test
     public void whenCalculateFactorialForFiveThenOneHundredTwenty() {
-        //Тест, проверяющий, что факториал числа 5 равен 120.
         Factorial factor = new Factorial();
         factor.calc(5);
         int result = factor.calc(5);
         assertThat(result, is(120));
     }
 
+    /**
+     * Тест, проверяющий, что факториал для числа 0 равен 1.
+     */
     @Test
     public void whenCalculateFactorialForZeroThenOne() {
-        //Тест, проверяющий, что факториал для числа 0 равен 1.
         Factorial factor = new Factorial();
         factor.calc(0);
         int result = factor.calc(0);

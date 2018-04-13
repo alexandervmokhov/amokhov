@@ -14,16 +14,16 @@ public class MatrixTest {
     public void whenSize3ThenMultipleTableArray3x3() {
         int size = 3;
         Matrix matrix = new Matrix();
-        int[][] multipleTab = matrix.multiple(size);
+        int[][] multiple = matrix.multiple(size);
         int[][] expect = new int[][] {{1, 2, 3}, {2, 4, 6}, {3, 6, 9}};
-        assertThat(multipleTab, is(expect));
+        assertThat(multiple, is(expect));
     }
 
     @Test
     public void whenSize6ThenMultipleTableArray6x6() {
         int size = 6;
         Matrix matrix = new Matrix();
-        int[][] multipleTab = matrix.multiple(size);
+        int[][] multiple = matrix.multiple(size);
         int[][] expect = new int[][] {
                 {1, 2, 3, 4, 5, 6},
                 {2, 4, 6, 8, 10, 12},
@@ -32,6 +32,6 @@ public class MatrixTest {
                 {5, 10, 15, 20, 25, 30},
                 {6, 12, 18, 24, 30, 36}
         };
-        assertThat(multipleTab, is(expect));
+        assertThat(multiple, is(expect));
     }
 }

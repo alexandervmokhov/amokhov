@@ -6,6 +6,11 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
 
+/**
+ * @author Alexander Mokhov (alexander.v.mokhov@gmail.com
+ * @version $Id$
+ * since 13.03.2018
+ */
 public class FitTest {
     @Test
     public void manWeight() {

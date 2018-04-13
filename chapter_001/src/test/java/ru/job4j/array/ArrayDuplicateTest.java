@@ -10,16 +10,13 @@ import static org.junit.Assert.assertThat;
  * @version $Id$
  * since 04.04.2018
  */
-
 public class ArrayDuplicateTest {
     @Test
     public void whenRemoveDuplicatesThenArrayWithoutDuplicate() {
-        //напишите здесь тест, проверяющий удаление дубликатов
-        // строк из массива строк.
         ArrayDuplicate arrayDuplicate = new ArrayDuplicate();
         String[] input = new String[] {"Привет", "Мир", "Привет", "Супер", "Мир"};
-        String[] resultArray = arrayDuplicate.remove(input);
-        String[] expectArray = new String[] {"Привет", "Мир", "Супер"};
-        assertThat(resultArray, is(expectArray));
+        String[] result = arrayDuplicate.remove(input);
+        String[] expect = new String[] {"Привет", "Мир", "Супер"};
+        assertThat(result, is(expect));
     }
 }
