@@ -20,12 +20,12 @@ public class ArrayDuplicate {
      * @param array основной и единственный массив.
      * @return если массив не содержит дубликатов.
      */
-    public String[] remove(String[] array){
+    public String[] remove(String[] array) {
         int dup = 0;
-        for(int i = 0; i < array.length; i++){
-            for(int j = i + 1; j < array.length - dup; j++){
-                if(array[i].equals(array[j])){
-                    while(j != array.length - dup - 1 && array[array.length - dup - 1].equals(array[j])) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length - dup; j++) {
+                if (array[i].equals(array[j])) {
+                    while (j != array.length - dup - 1 && array[array.length - dup - 1].equals(array[j])) {
                         dup++;
                     }
                     String tmp = array[array.length - dup - 1];

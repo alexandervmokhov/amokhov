@@ -21,7 +21,7 @@ public class ArrayChar2 {
         char[] value = sub.toCharArray();
         char[] data = origin.toCharArray();
         for (int i = 0; i < value.length; i++) {
-            if (data[i+1] != value[i]) {
+            if (data[i + 1] != value[i]) {
                 result = false;
             }
         }

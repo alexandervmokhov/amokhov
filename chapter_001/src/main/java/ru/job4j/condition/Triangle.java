@@ -54,13 +54,12 @@ public class Triangle {
 	 * @param bc Длина от точки b c.
 	 * @return Треугольник существует только тогда, когда сумма любых двух его сторон больше третьей.
 	 */
-	private boolean exist(double ab, double ac, double bc) {
-		if (ab + ac > bc) {
-			return true;
+	public boolean exist(double ab, double ac, double bc) {
+		boolean exist = false;
+		if (ab + bc > ac && ab + ac > ab && ac + bc > ab) {
+			exist = true;
 		}
-		else {
-			return false;
-		}
+		return exist;
 	}
 }
   
