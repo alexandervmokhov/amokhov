@@ -48,8 +48,10 @@ public class TrackerTest {
         tracker.add(first);
         Item second = new Item("test2", "testDescription2", 1234L);
         tracker.add(second);
-        tracker.delete(first.getId());
-        assertThat(tracker.getAll()[0], is(second));
+        Item third = new Item("test3", "testDescription3", 12345L);
+        tracker.add(third);
+        tracker.delete(second.getId());
+        assertThat(tracker.getAll()[1], is(third));
     }
 
     /**
@@ -59,7 +61,8 @@ public class TrackerTest {
     public void whenAddNewNameThenTrackerHasSameListOfNames() {
         Tracker tracker = new Tracker();
         Item item = new Item("Ivan","testDescription",123L);
+        tracker.add(item);
         tracker.findByName("Ivan");
-        assertThat(tracker.findByName(item.getName()), is("Ivan"));
+        assertThat(tracker.findById(item.getId()).getName(), is("Ivan"));
     }
 }

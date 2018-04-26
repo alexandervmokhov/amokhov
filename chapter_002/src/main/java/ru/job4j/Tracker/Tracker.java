@@ -54,7 +54,7 @@ public class Tracker {
      */
     public void replace(String id, Item item) {
         item.getId();
-        this.items[this.position-1] = item;
+        this.items[this.position - 1] = item;
     }
 
     /**
@@ -75,12 +75,19 @@ public class Tracker {
 
     /**
      * Метод реализущий удаление заявки из хранилища
+     *
+     * Метод удаляет ячейку в массиве this.items. Для этого
+     * необходимо найти ячейку в массиве по id.  Далее сместить
+     * все значения справа от удаляемого элемента - на одну
+     * ячейку влево с помощью System.arrayCopy();
+     *
      * @param id
      */
     public void delete(String id) {
+        //int position = 0;
         for (Item item : items) {
             if (item != null && item.getId().equals(id)) {
-                System.arraycopy(this.items, items.length - 99, this.items, items.length - 100, items.length - 1);
+                System.arraycopy(this.items, this.position - 2, this.items, this.position - 3, items.length - 1);
                 break;
             }
         }
@@ -99,14 +106,20 @@ public class Tracker {
     }
 
     /**
-     * Метод реализует получение списка по имени. ДОДЕЛАТЬ!
+     * Метод реализует получение списка по имени.
+     *
+     * Метод проверяет в цикле все элементы массива this.items,
+     * сравнивая name (используя метод getName класса Item) с
+     * аргументом метода String key. Элементы, у которых совпадает
+     * name, копирует в результирующий массив и возвращает его;
+     *
      * @param key
      * @return
      */
 
     public Item[] findByName(String key) {
-        Item[] result = null;
-        for (Item item : items) {
+        Item[] result = new Item[items.length];
+        for (Item item : this.items) {
             if (item != null && item.getName().equals(key)) {
                 result = items;
                 break;
