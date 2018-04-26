@@ -50,7 +50,6 @@ public class Tracker {
 
     /**
      * Метод реализущий редактирование (замену) заявок в хранилище.
-     * @param id
      */
     public void replace(String id, Item item) {
         item.getId();
@@ -59,8 +58,6 @@ public class Tracker {
 
     /**
      * Метод реализует получение заявки по Id.
-     * @param id
-     * @return
      */
     protected Item findById(String id) {
         Item result = null;
@@ -74,17 +71,14 @@ public class Tracker {
     }
 
     /**
-     * Метод реализущий удаление заявки из хранилища
+     * Метод реализует удаление заявки из хранилища.
      *
      * Метод удаляет ячейку в массиве this.items. Для этого
      * необходимо найти ячейку в массиве по id.  Далее сместить
      * все значения справа от удаляемого элемента - на одну
      * ячейку влево с помощью System.arrayCopy();
-     *
-     * @param id
      */
     public void delete(String id) {
-        //int position = 0;
         for (Item item : items) {
             if (item != null && item.getId().equals(id)) {
                 System.arraycopy(this.items, this.position - 2, this.items, this.position - 3, items.length - 1);
@@ -95,7 +89,6 @@ public class Tracker {
 
     /**
      * Метод, реализующий получение списка всех заявок.
-     * @return
      */
     public Item[] getAll() {
         Item[] result = new Item[this.position];
@@ -112,9 +105,6 @@ public class Tracker {
      * сравнивая name (используя метод getName класса Item) с
      * аргументом метода String key. Элементы, у которых совпадает
      * name, копирует в результирующий массив и возвращает его;
-     *
-     * @param key
-     * @return
      */
 
     public Item[] findByName(String key) {

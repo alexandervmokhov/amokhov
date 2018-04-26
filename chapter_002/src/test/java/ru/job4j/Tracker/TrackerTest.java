@@ -19,6 +19,7 @@ public class TrackerTest {
 
     /**
      * Тест для замены заявки.
+     *
      * Алгоритм работы:
      * Добавляем заявку в трекер. Теперь в объект проинициализирован id.
      * Создаем новую заявку.
@@ -39,7 +40,6 @@ public class TrackerTest {
 
     /**
      * Тест для удаления заявки.
-     *
      */
     @Test
     public void whenDeleteFirstNameThenReturnSecondName() {
@@ -58,7 +58,7 @@ public class TrackerTest {
      * Тест для получения массива по имени.
      */
     @Test
-    public void whenAddNewNameThenTrackerHasSameListOfNames() {
+    public void whenFindNewNameThenTrackerReturnItemWithName() {
         Tracker tracker = new Tracker();
         Item item = new Item("Ivan","testDescription",123L);
         tracker.add(item);
