@@ -50,10 +50,14 @@ public class Tracker {
 
     /**
      * Метод реализущий редактирование (замену) заявок в хранилище.
+     * Метод должен заменить ячейку в массиве this.items.
+     * Для этого необходимо найти ячейку в массиве по id
      */
     public void replace(String id, Item item) {
-        item.getId();
-        this.items[this.position - 1] = item;
+        this.position = 0;
+        if (item != null && item.getId().equals(id)) {
+            this.items[this.position++] = item;
+        }
     }
 
     /**
@@ -79,9 +83,11 @@ public class Tracker {
      * ячейку влево с помощью System.arrayCopy();
      */
     public void delete(String id) {
+        //this.position = 0;
         for (Item item : items) {
             if (item != null && item.getId().equals(id)) {
-                System.arraycopy(this.items, this.position - 2, this.items, this.position - 3, items.length - 1);
+                System.arraycopy(this.items, this.position - 1, this.items, this.position - 2, items.length - 1);
+                //System.arraycopy(this.items, 1, this.items, 0, items.length - 1);
                 break;
             }
         }
