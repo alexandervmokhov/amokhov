@@ -6,7 +6,6 @@ package ru.job4j.profession;
  * since 14.04.2018
  */
 public class Doctor extends Profession {
-
     public Doctor(String profession, String name) {
         this.profession = profession;
         this.name = name;
@@ -14,12 +13,19 @@ public class Doctor extends Profession {
 }
 
 class PatientDiagnose {
-    public String patient;
+    private String patient;
 
-    public String diagnose;
+    private String diagnose;
 
     public PatientDiagnose(String patient, String diagnose) {
         this.patient = patient;
         this.diagnose = diagnose;
+    }
+    public String getPatient() {
+        return this.patient;
+    }
+
+    public String getDiagnose() {
+        return this.diagnose;
     }
 }

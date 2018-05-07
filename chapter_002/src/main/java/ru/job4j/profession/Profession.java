@@ -6,16 +6,16 @@ package ru.job4j.profession;
  * since 14.04.2018
  */
 public class Profession {
-    public String name;
-
     public String profession;
 
-    public Profession() {
-        }
+    public String name;
 
-    public Profession(String name, String profession) {
-        this.name = name;
+    public Profession() {
+    }
+
+    private Profession(String profession, String name) {
         this.profession = profession;
+        this.name = name;
     }
 
     public String getName() {

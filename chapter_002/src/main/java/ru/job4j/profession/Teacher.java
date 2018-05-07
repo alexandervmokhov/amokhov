@@ -14,12 +14,20 @@ public class Teacher extends Profession {
 }
 
 class TeachStudent {
-    public String teach;
+    private String teach;
 
-    public String student;
+    private String student;
 
     public TeachStudent(String teach, String student) {
         this.teach = teach;
         this.student = student;
+    }
+
+    public String getTeach() {
+        return this.teach;
+    }
+
+    public String getStudent() {
+        return this.student;
     }
 }
