@@ -6,20 +6,19 @@ public class Item {
      */
     private String id;
 
-    public String name;
+    private String name;
 
-    public String description;
+    private String description;
 
-    public long create;
+    private long create;
 
     public Item() {
     }
 
-    public Item(String name, String description) {
-    //public Item(String name, String description, long create) {
+    public Item(String name, String description, long create) {
         this.name = name;
         this.description = description;
-        //this.create = create;
+        this.create = create;
     }
 
     public String getName() {

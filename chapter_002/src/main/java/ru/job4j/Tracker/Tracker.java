@@ -55,9 +55,10 @@ public class Tracker {
      */
     public void replace(String id, Item item) {
         this.position = 0;
-        if (item != null && item.getId().equals(id)) {
-            this.items[this.position++] = item;
+        if(item != null && items[this.position].getId().equals(id)) {
+            item.setId(items[this.position].getId());
         }
+        this.items[this.position++] = item;
     }
 
     /**
@@ -83,11 +84,9 @@ public class Tracker {
      * ячейку влево с помощью System.arrayCopy();
      */
     public void delete(String id) {
-        //this.position = 0;
         for (Item item : items) {
             if (item != null && item.getId().equals(id)) {
                 System.arraycopy(this.items, this.position - 1, this.items, this.position - 2, items.length - 1);
-                //System.arraycopy(this.items, 1, this.items, 0, items.length - 1);
                 break;
             }
         }
@@ -112,7 +111,6 @@ public class Tracker {
      * аргументом метода String key. Элементы, у которых совпадает
      * name, копирует в результирующий массив и возвращает его;
      */
-
     public Item[] findByName(String key) {
         Item[] result = new Item[items.length];
         for (Item item : this.items) {
