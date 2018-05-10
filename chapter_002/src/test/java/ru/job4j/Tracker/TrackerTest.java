@@ -46,12 +46,17 @@ public class TrackerTest {
     @Test
     public void whenDeleteFirstNameThenReturnSecondName() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1","testDescription1",123L);
+        Item first = new Item("test0","testDescription0",123L);
         tracker.add(first);
-        Item second = new Item("test2", "testDescription2", 1234L);
+        Item second = new Item("test1", "testDescription1", 1234L);
         tracker.add(second);
+        //Item third = new Item("test2", "testDescription2", 12345L);
+        //tracker.add(third);
+        //Item fourth = new Item("test3", "testDescription3", 12345L);
+        //tracker.add(fourth);
         tracker.delete(first.getId());
-        assertThat(tracker.getAll()[0].getDescription(), is("testDescription2"));
+        assertThat(tracker.getAll()[1].getDescription(), is("testDescription1"));
+        //assertThat(tracker.getAll()[1].getDescription(), is("testDescription3"));
     }
 
     /**

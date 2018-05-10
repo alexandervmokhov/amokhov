@@ -9,4 +9,9 @@ public class ConsoleInput implements Input {
         System.out.print(question);
         return scanner.next();
     }
+
+    public long askL(String question) {
+        System.out.print(question);
+        return scanner.nextLong();
+    }
 }
