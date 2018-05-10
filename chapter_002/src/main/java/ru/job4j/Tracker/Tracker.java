@@ -54,15 +54,6 @@ public class Tracker {
      * Для этого необходимо найти ячейку в массиве по id
      */
     public void replace(String id, Item item) {
-        this.position = 0;
-        if(item != null && items[this.position].getId().equals(id)) {
-            item.setId(items[this.position].getId());
-        }
-        this.items[this.position++] = item;
-    }
-
-    /**
-    public void replace(String id, Item item) {
         for (int index = 0; index != this.position; index++) {
             if(items[index].getId().equals(id)) {
                 item.setId(items[index].getId());
@@ -71,7 +62,6 @@ public class Tracker {
             }
         }
     }
-     */
 
     /**
      * Метод реализует получение заявки по Id.
@@ -93,29 +83,16 @@ public class Tracker {
      * Метод удаляет ячейку в массиве this.items. Для этого
      * необходимо найти ячейку в массиве по id.  Далее сместить
      * все значения справа от удаляемого элемента - на одну
-     * ячейку влево с помощью System.arrayCopy();
+     * ячейку влево с помощью System.arraycopy();
      */
     public void delete(String id) {
-        //for (Item item : items) {
-            for (int index = 0; index != this.position; index++) {
-                if(items[index].getId().equals(id)) {
-                    System.arraycopy(items, index + 1, items, index, items.length - 1 - index);
-                    break;
-                }
-            }
-        //}
-
-    }
-
-        /**
-        for (Item item : items) {
-            if (item != null && item.getId().equals(id)) {
-                System.arraycopy(items, position - 1, items, 0, items.length - 1 - position);
-                    //System.arraycopy(items, position + 1, items, position, items.length - 1 - position);
+        for (int index = 0; index < items.length; index++) {
+            if(items[index].getId().equals(id)) {
+                System.arraycopy(items, index + 1, items, index, items.length - 1 - index);
+                break;
             }
         }
-         */
-
+    }
 
     /**
      * Метод, реализующий получение списка всех заявок.

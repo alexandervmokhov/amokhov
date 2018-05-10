@@ -1,5 +1,10 @@
 package ru.job4j.Tracker;
 
+/**
+ *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
+ *@version $Id$
+ *@since 16.04.2018
+ */
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -29,7 +34,6 @@ public class TrackerTest {
      */
     @Test
     public void whenReplaceNameThenReturnNewName() {
-
         Tracker tracker = new Tracker();
         Item previous = new Item("test1","testDescription",123L);
         tracker.add(previous);
@@ -50,13 +54,8 @@ public class TrackerTest {
         tracker.add(first);
         Item second = new Item("test1", "testDescription1", 1234L);
         tracker.add(second);
-        //Item third = new Item("test2", "testDescription2", 12345L);
-        //tracker.add(third);
-        //Item fourth = new Item("test3", "testDescription3", 12345L);
-        //tracker.add(fourth);
         tracker.delete(first.getId());
         assertThat(tracker.getAll()[0].getDescription(), is("testDescription1"));
-        //assertThat(tracker.getAll()[1].getDescription(), is("testDescription3"));
     }
 
     /**
