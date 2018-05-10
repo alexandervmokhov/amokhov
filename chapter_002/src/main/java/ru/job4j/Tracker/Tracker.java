@@ -62,6 +62,18 @@ public class Tracker {
     }
 
     /**
+    public void replace(String id, Item item) {
+        for (int index = 0; index != this.position; index++) {
+            if(items[index].getId().equals(id)) {
+                item.setId(items[index].getId());
+                items[index] = item;
+                break;
+            }
+        }
+    }
+     */
+
+    /**
      * Метод реализует получение заявки по Id.
      */
     protected Item findById(String id) {
@@ -84,16 +96,26 @@ public class Tracker {
      * ячейку влево с помощью System.arrayCopy();
      */
     public void delete(String id) {
-        //this.position = items.length;
-        for (Item item : items) {
-            //position = 0;
-                if (item != null && item.getId().equals(id)) {
-                    System.arraycopy(items, position - 1, items, 0, items.length - 1 - position);
-                    //System.arraycopy(items, position + 1, items, position, items.length - 1 - position);
+        //for (Item item : items) {
+            for (int index = 0; index != this.position; index++) {
+                if(items[index].getId().equals(id)) {
+                    System.arraycopy(items, index + 1, items, index, items.length - 1 - index);
+                    break;
                 }
-            //}
-        }
+            }
+        //}
+
     }
+
+        /**
+        for (Item item : items) {
+            if (item != null && item.getId().equals(id)) {
+                System.arraycopy(items, position - 1, items, 0, items.length - 1 - position);
+                    //System.arraycopy(items, position + 1, items, position, items.length - 1 - position);
+            }
+        }
+         */
+
 
     /**
      * Метод, реализующий получение списка всех заявок.
