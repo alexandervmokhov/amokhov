@@ -54,7 +54,7 @@ public class Tracker {
      * Для этого необходимо найти ячейку в массиве по id
      */
     public void replace(String id, Item item) {
-        //this.position = 0;
+        this.position = 0;
         if(item != null && items[this.position].getId().equals(id)) {
             item.setId(items[this.position].getId());
         }
@@ -84,11 +84,12 @@ public class Tracker {
      * ячейку влево с помощью System.arrayCopy();
      */
     public void delete(String id) {
-        //position = 0;
+        //this.position = items.length;
         for (Item item : items) {
             //position = 0;
                 if (item != null && item.getId().equals(id)) {
-                    System.arraycopy(items, position + 1, items, position, items.length - 1 - position);
+                    System.arraycopy(items, position - 1, items, 0, items.length - 1 - position);
+                    //System.arraycopy(items, position + 1, items, position, items.length - 1 - position);
                 }
             //}
         }
