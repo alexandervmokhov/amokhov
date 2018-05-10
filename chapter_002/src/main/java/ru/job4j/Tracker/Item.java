@@ -10,6 +10,7 @@ package ru.job4j.Tracker;
  *@since 16.04.2018
  */
 public class Item {
+
     /**
      * Модификатор поля ID. Определяет уникальный номер для каждого Item.
      */

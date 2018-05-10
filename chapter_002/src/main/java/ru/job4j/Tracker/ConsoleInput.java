@@ -1,5 +1,10 @@
 package ru.job4j.Tracker;
 
+/**
+ *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
+ *@version $Id$
+ *@since 0.1
+ */
 import java.util.Scanner;
 
 public class ConsoleInput implements Input {
