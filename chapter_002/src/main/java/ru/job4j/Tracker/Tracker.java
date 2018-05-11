@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 import java.util.*;
 
@@ -56,7 +56,7 @@ public class Tracker {
      */
     public void replace(String id, Item item) {
         for (int index = 0; index != this.position; index++) {
-            if(items[index].getId().equals(id)) {
+            if (items[index].getId().equals(id)) {
                 item.setId(items[index].getId());
                 items[index] = item;
                 break;
@@ -88,7 +88,7 @@ public class Tracker {
      */
     public void delete(String id) {
         for (int index = 0; index < items.length; index++) {
-            if(items[index].getId().equals(id)) {
+            if (items[index].getId().equals(id)) {
                 System.arraycopy(items, index + 1, items, index, items.length - 1 - index);
                 break;
             }

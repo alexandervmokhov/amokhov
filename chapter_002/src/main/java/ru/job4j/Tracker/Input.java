@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 /**
  *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)

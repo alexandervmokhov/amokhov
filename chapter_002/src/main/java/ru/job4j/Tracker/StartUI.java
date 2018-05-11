@@ -1,4 +1,4 @@
-package ru.job4j.Tracker;
+package ru.job4j.tracker;
 
 import java.util.Arrays;
 
@@ -116,7 +116,7 @@ public class StartUI {
         long create = this.input.askL("Enter new long number: ");
         Item item = new Item(name, desc, create);
         this.tracker.add(item);
-        System.out.println("------------ New query with getId: " + item.getId() + " added. --------" );
+        System.out.println("------------ New query with getId: " + item.getId() + " added. --------");
     }
 
     /**
@@ -147,8 +147,8 @@ public class StartUI {
         Item next = new Item(name, desc, create);
         next.setId(previous.getId());
         tracker.replace(previous.getId(), next);
-        System.out.println("------------ This query: " + tracker.findById(id).getName() + " was changed. --------" );
-        System.out.println("------------ It has ID: " + next.getId() + "  --------" );
+        System.out.println("------------ This query: " + tracker.findById(id).getName() + " was changed. --------");
+        System.out.println("------------ It has ID: " + next.getId() + "  --------");
     }
 
     /**
@@ -159,7 +159,7 @@ public class StartUI {
         String id = this.input.ask("Enter query ID: ");
         System.out.println("Deletind query name is: " + tracker.findById(id).getName());
         tracker.delete(id);
-        System.out.println("------------ This query was deleted: --------" );
+        System.out.println("------------ This query was deleted: --------");
     }
 
     /**
