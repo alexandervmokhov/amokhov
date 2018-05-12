@@ -179,12 +179,12 @@ public class StartUI {
     private void findNameItem() {
         System.out.println("----------- Query finding -----------");
         String name = this.input.ask("Enter query name: ");
-        for (int i = 0; i < tracker.getAll().length; i++) {
-            if (tracker.getAll() != null && name != null && tracker.findByName(name)[i].getName().equals(name)) {
-                System.out.print("ID: " + tracker.getAll()[i].getId() + ", ");
-                System.out.print(tracker.getAll()[i].getName() + ", ");
-                System.out.print(tracker.getAll()[i].getDescription() + ", ");
-                System.out.println(tracker.getAll()[i].getCreate());
+        for (int i = 0; i < tracker.findByName(name).length; i++) {
+            if (tracker.findByName(name)[i] != null && name != null && tracker.findByName(name)[i].getName().equals(name)) {
+                System.out.print("ID: " + tracker.findByName(name)[i].getId() + ", ");
+                System.out.print(tracker.findByName(name)[i].getName() + ", ");
+                System.out.print(tracker.findByName(name)[i].getDescription() + ", ");
+                System.out.println(tracker.findByName(name)[i].getCreate());
             }
         }
     }
