@@ -113,7 +113,8 @@ public class StartUI {
         System.out.println("----------- New query adding -----------");
         String name = this.input.ask("Enter query name: ");
         String desc = this.input.ask("Enter description of query: ");
-        long create = this.input.askL("Enter new long number: ");
+        long create = Long.parseLong(this.input.ask("Enter new long number: "));
+        //long create = this.input.askL("Enter new long number: ");
         Item item = new Item(name, desc, create);
         this.tracker.add(item);
         System.out.println("------------ New query with getId: " + item.getId() + " added. --------");

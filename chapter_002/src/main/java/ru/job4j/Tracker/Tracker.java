@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-import java.util.*;
+import java.util.Random;
 
 /**
  * Class Tracker для выполнения задания
