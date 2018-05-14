@@ -33,11 +33,14 @@ public class StartUITest {
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test1", "testDescription", 1);
-        tracker.add(item);
-        Input input = new StubInput(new String[]{"1", item.getId(), "test1", "testDescription", "1", "6"});
+        Item first = new Item("test1", "testDescription1", 1);
+        tracker.add(first);
+        Item second = new Item("test2", "testDescription2", 2);
+        tracker.add(second);
+        Input input = new StubInput(new String[]{"1", "6"});
         new StartUI(input, tracker).init();
-        assertThat(tracker.findById(item.getId()).getName(), is("test1"));
+        assertThat(tracker.getAll()[0].getName(), is("test1"));
+        assertThat(tracker.getAll()[1].getName(), is("test2"));
     }
 
     /**
