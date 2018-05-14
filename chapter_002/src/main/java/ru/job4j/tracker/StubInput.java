@@ -14,7 +14,7 @@ public class StubInput implements Input {
      * 0 - выбор пункта меня "добавить новую заявку".
      * name - имя заявки
      * desc - описание заявки
-     * e - выйти из трекера.
+     * 6 - выйти из трекера.
      */
     private final String[] value;
 
