@@ -3,7 +3,7 @@ package ru.job4j.tracker;
 /**
  *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
  *@version $Id$
- *@since 16.04.2018
+ *@since 14.05.2018
  */
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
@@ -29,7 +29,6 @@ public class StartUITest {
 
     /**
      * Тест для вывода всех заявок.
-     *
      */
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
@@ -43,7 +42,6 @@ public class StartUITest {
 
     /**
      * Тест для редактирования заявки.
-     *
      */
     @Test
     public void whenEditThenTrackerHasEditedValue() {
@@ -57,7 +55,6 @@ public class StartUITest {
 
     /**
      * Тест для удаления заявки.
-     *
      */
     @Test
     public void whenDeletePreviousThenTrackerHasNextValue() {
@@ -73,7 +70,6 @@ public class StartUITest {
 
     /**
      * Тест для поиска заявки по Id.
-     *
      */
     @Test
     public void whenFindByIdThenTrackerHasFindValue() {
@@ -87,7 +83,6 @@ public class StartUITest {
 
     /**
      * Тест для поиска заявки по имени.
-     *
      */
     @Test
     public void whenFindByNameThenTrackerHasFindValue() {

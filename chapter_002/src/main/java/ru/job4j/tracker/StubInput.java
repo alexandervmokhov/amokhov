@@ -1,5 +1,10 @@
 package ru.job4j.tracker;
 
+/**
+ *@author Alexander Mokhov (alexander.v.mokhov@gmail.com)
+ *@version $Id$
+ *@since 0.1
+ */
 public class StubInput implements Input {
 
     /**
@@ -17,7 +22,7 @@ public class StubInput implements Input {
      * Поле считает количество вызовов метода ask.
      * При каждом вызове надо передвинуть указатель на новое число.
      */
-    private int position = 0;
+    private int position;
 
     public StubInput(final String[] value) {
         this.value = value;
