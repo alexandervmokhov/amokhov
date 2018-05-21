@@ -8,40 +8,154 @@ package ru.job4j.tracker;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-
+import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
-
     /**
      * Поле содержит дефолтный вывод в консоль.
      */
-    //private final PrintStream stdout = System.out;
-    private Tracker tracker = new Tracker();
+    private final PrintStream stdout = System.out;
 
+    /**
+     * Буфер для результата.
+     */
+    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+    /**
+     * @Before - выполняет метод, до запуска теста.
+     */
     @Before
-    public void loadTracker() {
+    public void loadOutput() {
         System.out.println("execute before method");
-        tracker = this.tracker;
+        System.setOut(new PrintStream(this.out));
+
     }
 
-    //@After
-    //public void backOutput() {
-     //   System.setOut(this.stdout);
-     //   System.out.println("execute after method");
-    //}
+    /**
+     * @After - Выполняет метод, после запуска теста.
+     */
+    @After
+    public void backOutput() {
+        System.setOut(this.stdout);
+        System.out.println("execute after method");
+    }
+
+    /**
+     * Тест проверяет правильность вывода на экран результата действий
+     * пользователя при выборе меню "1" (вывод всех заявок).
+     */
+    @Test
+    public void whenGetAllItems() {
+        Tracker tracker = new Tracker();
+        Item first = new Item("test1", "testDescription1", 1);
+        tracker.add(first);
+        Item second = new Item("test2", "testDescription2", 2);
+        tracker.add(second);
+        Input input = new StubInput(new String[]{"1", "6"});
+        new StartUI(input, tracker).init();
+        assertThat(
+                new String(out.toByteArray()),
+                is(
+                        new StringBuilder()
+                                .append(System.lineSeparator())
+                                .append("Menu.")
+                                .append(System.lineSeparator())
+                                .append("0. Add new Item")
+                                .append(System.lineSeparator())
+                                .append("1. Show all items")
+                                .append(System.lineSeparator())
+                                .append("2. Edit item")
+                                .append(System.lineSeparator())
+                                .append("3. Delete item")
+                                .append(System.lineSeparator())
+                                .append("4. Find item by Id")
+                                .append(System.lineSeparator())
+                                .append("5. Find items by name")
+                                .append(System.lineSeparator())
+                                .append("6. Exit Program")
+                                .append(System.lineSeparator())
+                                .append("ID: " + first.getId() + ", ")
+                                .append("test1, testDescription1, 1")
+                                .append(System.lineSeparator())
+                                .append("ID: " + second.getId() + ", ")
+                                .append("test2, testDescription2, 2")
+                                .append(System.lineSeparator())
+                                .append(System.lineSeparator())
+                                .append("Menu.")
+                                .append(System.lineSeparator())
+                                .append("0. Add new Item")
+                                .append(System.lineSeparator())
+                                .append("1. Show all items")
+                                .append(System.lineSeparator())
+                                .append("2. Edit item")
+                                .append(System.lineSeparator())
+                                .append("3. Delete item")
+                                .append(System.lineSeparator())
+                                .append("4. Find item by Id")
+                                .append(System.lineSeparator())
+                                .append("5. Find items by name")
+                                .append(System.lineSeparator())
+                                .append("6. Exit Program")
+                                .append(System.lineSeparator())
+                                .toString()
+                )
+        );
+    }
+
+    /**
+     * Тест проверяет правильность вывода на экран результата действий
+     * пользователя при выборе меню "0" (добавление заявки).
+     */
+    @Test
+    public void whenAddNewItem() {
+        Tracker tracker = new Tracker();
+        Input input = new StubInput(new String[]{"0", "test name", "desc", "1", "6"});
+        new StartUI(input, tracker).init();
+        assertThat(
+                new String(this.out.toByteArray()),
+                is(
+                        new StringJoiner(
+                                System.lineSeparator(), "",
+                                System.lineSeparator())
+                                .add("")
+                                .add("Menu.")
+                                .add("0. Add new Item")
+                                .add("1. Show all items")
+                                .add("2. Edit item")
+                                .add("3. Delete item")
+                                .add("4. Find item by Id")
+                                .add("5. Find items by name")
+                                .add("6. Exit Program")
+                                .add("----------- New query adding -----------")
+                                .add("------------ New query with Id: "
+                                        + tracker.getAll()[0].getId()
+                                        + " added. --------")
+                                .add("")
+                                .add("Menu.")
+                                .add("0. Add new Item")
+                                .add("1. Show all items")
+                                .add("2. Edit item")
+                                .add("3. Delete item")
+                                .add("4. Find item by Id")
+                                .add("5. Find items by name")
+                                .add("6. Exit Program")
+                                .toString()
+                )
+        );
+    }
 
     /**
      * Тест для вывода всех заявок.
      */
     @Test
     public void whenUpdateThenTrackerHasUpdatedValue() {
-        //Tracker tracker = new Tracker();
+        Tracker tracker = new Tracker();
         Item first = new Item("test1", "testDescription1", 1);
-        this.tracker.add(first);
+        tracker.add(first);
         Item second = new Item("test2", "testDescription2", 2);
         tracker.add(second);
         Input input = new StubInput(new String[]{"1", "6"});
