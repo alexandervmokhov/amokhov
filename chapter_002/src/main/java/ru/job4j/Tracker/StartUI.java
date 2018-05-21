@@ -117,7 +117,7 @@ public class StartUI {
         //long create = this.input.askL("Enter new long number: ");
         Item item = new Item(name, desc, create);
         this.tracker.add(item);
-        System.out.println("------------ New query with getId: " + item.getId() + " added. --------");
+        System.out.println("------------ New query with Id: " + item.getId() + " added. --------");
     }
 
     /**
