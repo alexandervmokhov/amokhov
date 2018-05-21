@@ -5,11 +5,51 @@ package ru.job4j.tracker;
  *@version $Id$
  *@since 14.05.2018
  */
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.io.PrintStream;
+
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class StartUITest {
+
+    /**
+     * Поле содержит дефолтный вывод в консоль.
+     */
+    //private final PrintStream stdout = System.out;
+    private Tracker tracker = new Tracker();
+
+    @Before
+    public void loadTracker() {
+        System.out.println("execute before method");
+        tracker = this.tracker;
+    }
+
+    //@After
+    //public void backOutput() {
+     //   System.setOut(this.stdout);
+     //   System.out.println("execute after method");
+    //}
+
+    /**
+     * Тест для вывода всех заявок.
+     */
+    @Test
+    public void whenUpdateThenTrackerHasUpdatedValue() {
+        //Tracker tracker = new Tracker();
+        Item first = new Item("test1", "testDescription1", 1);
+        this.tracker.add(first);
+        Item second = new Item("test2", "testDescription2", 2);
+        tracker.add(second);
+        Input input = new StubInput(new String[]{"1", "6"});
+        new StartUI(input, tracker).init();
+        assertThat(tracker.getAll()[0].getName(), is("test1"));
+        assertThat(tracker.getAll()[1].getName(), is("test2"));
+    }
+
     /**
      * Тест для добавления заявки.
      *
