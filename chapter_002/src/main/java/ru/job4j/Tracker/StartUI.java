@@ -68,6 +68,16 @@ public class StartUI {
      * основной цикл программы.
      */
     public void init() {
+        Tracker tracker = new Tracker();
+        MenuTracker menu = new MenuTracker(this.input, tracker);
+        do {
+            menu.show();
+        } while(!"y".equals(this.input.ask("Exit? y")));
+    }
+
+    /**
+     * Старое меню
+    public void init() {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
@@ -89,6 +99,7 @@ public class StartUI {
             }
         }
     }
+     */
 
     /**
      * Метод реализует вывод на экран пункты основного меню.
@@ -109,15 +120,13 @@ public class StartUI {
      * Метод реализует добавление новой заявки в хранилище.
      */
     private void createItem() {
-        boolean exit = false;
         System.out.println("----------- New query adding -----------");
         String name = this.input.ask("Enter query name: ");
         String desc = this.input.ask("Enter description of query: ");
         long create = Long.parseLong(this.input.ask("Enter new long number: "));
-        //long create = this.input.askL("Enter new long number: ");
         Item item = new Item(name, desc, create);
         this.tracker.add(item);
-        System.out.println("------------ New query with getId: " + item.getId() + " added. --------");
+        System.out.println("------------ New query with Id: " + item.getId() + " added. --------");
     }
 
     /**
