@@ -7,6 +7,7 @@ package ru.job4j.tracker;
  */
 public interface Input {
     String ask(String question);
-    //long askL(String question);
+
+    int ask(String question, int[] range);
 }
 

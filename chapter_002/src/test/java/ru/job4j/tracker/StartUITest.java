@@ -62,7 +62,7 @@ public class StartUITest {
                 is(
                         new StringBuilder()
                                 .append(System.lineSeparator())
-                                .append("Menu.")
+                                .append("Menu:")
                                 .append(System.lineSeparator())
                                 .append("0. Add new Item")
                                 .append(System.lineSeparator())
@@ -76,7 +76,7 @@ public class StartUITest {
                                 .append(System.lineSeparator())
                                 .append("5. Find items by name")
                                 .append(System.lineSeparator())
-                                .append("6. Exit Program")
+                                .append("Select menu number:")
                                 .append(System.lineSeparator())
                                 .append("ID: " + first.getId() + ", ")
                                 .append("test1, testDescription1, 1")
