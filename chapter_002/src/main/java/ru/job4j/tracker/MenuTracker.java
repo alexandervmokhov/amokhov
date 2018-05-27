@@ -45,10 +45,13 @@ public class MenuTracker {
         }
 
         public void execute(Input input, Tracker tracker) {
+            System.out.println("----------- New item adding menu -----------");
             String name = input.ask("Enter query name: ");
             String desc = input.ask("Enter description of query: ");
             long create = Long.parseLong(input.ask("Enter new long number: "));
-            tracker.add(new Item(name, desc, create));
+            Item item = new Item(name, desc, create);
+            tracker.add(item);
+            System.out.println("------------ New item with Id: " + item.getId() + " added. --------");
         }
 
         public String info() {
