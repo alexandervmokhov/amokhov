@@ -37,7 +37,8 @@ public class MenuTracker {
     }
 
     /**
-     * Внутренний статический класс реализующий добавление новой заявки в хранилище.
+     * Внутренний статический класс реализующий добавление новой
+     * заявки в хранилище.
      */
     private static class AddItem implements UserAction {
         public int key() {
