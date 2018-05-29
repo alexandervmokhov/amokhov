@@ -24,13 +24,10 @@ public class ConsoleInput implements Input {
                 break;
             }
         }
-        //return key;
-        //return exist ? key : -1;
         if (exist) {
             return key;
         } else {
             throw new MenuOutException("Out of menu range.");
         }
-        //return  exist ? key : throw new MenuOutException("Out of menu range.");
     }
 }

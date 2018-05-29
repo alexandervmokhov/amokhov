@@ -47,9 +47,7 @@ public class StartUI {
         do {
             System.out.println("Menu:");
             menu.show();
-            //int key = Integer.valueOf(input.ask("Select:"));
-            //menu.select(key);
-            menu.select(input.ask("Select menu number:", ranges)); // выбрать диапазон ключей
+            menu.select(input.ask("Select menu number:", ranges));
         } while (!"y".equals(this.input.ask("Exit?(y):")));
     }
 
