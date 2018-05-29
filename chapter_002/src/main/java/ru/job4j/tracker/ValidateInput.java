@@ -10,7 +10,7 @@ public class ValidateInput extends ConsoleInput {
                 invalid = false;
             } catch (MenuOutException moe) {
                 //moe.printStackTrace();
-                System.out.println("Please select key from menu.");
+                System.out.println("Please select correct menu number.");
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter validate data again.");
             }
