@@ -14,7 +14,7 @@ public class StubInput implements Input {
      * 0 - выбор пункта меню "добавить новую заявку".
      * name - имя заявки
      * desc - описание заявки
-     * 6 - выйти из трекера.
+     * y - выйти из трекера.
      */
     private final String[] value;
 
@@ -26,10 +26,6 @@ public class StubInput implements Input {
 
     public StubInput(final String[] value) {
         this.value = value;
-    }
-
-    public StubInput(final int[] range) {
-        this.range = range;
     }
 
     /**
@@ -45,12 +41,6 @@ public class StubInput implements Input {
         return this.value[this.position++];
     }
 
-    @Override
-    public int ask(String question, int[] range) {
-        return this.value[this.position++];
-    }
-    /**
-    @Override
     public int ask(String question, int[] range) {
         int key = Integer.valueOf(this.ask(question));
         boolean exist = false;
@@ -65,5 +55,5 @@ public class StubInput implements Input {
         }
         return key;
     }
-    */
 }
+
