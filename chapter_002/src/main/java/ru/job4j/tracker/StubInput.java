@@ -28,6 +28,10 @@ public class StubInput implements Input {
         this.value = value;
     }
 
+    public StubInput(final int[] range) {
+        this.range = range;
+    }
+
     /**
      * Давайте рассмотрим, как работает этот метод.
      * у нас есть объект в котором содержатся заранее продуманные ответы.
@@ -41,6 +45,12 @@ public class StubInput implements Input {
         return this.value[this.position++];
     }
 
+    @Override
+    public int ask(String question, int[] range) {
+        return this.value[this.position++];
+    }
+    /**
+    @Override
     public int ask(String question, int[] range) {
         int key = Integer.valueOf(this.ask(question));
         boolean exist = false;
@@ -50,10 +60,10 @@ public class StubInput implements Input {
                 break;
             }
         }
-        if (exist) {
-            return key;
-        } else {
+        if (!exist) {
             throw new MenuOutException("Out of menu range.");
         }
+        return key;
     }
+    */
 }
